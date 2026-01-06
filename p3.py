@@ -43,10 +43,11 @@ se4 = st.slider("#### 花瓣寬度",
                 float(df['petal width (cm)'].min()),
                 float(df['petal width (cm)'].max()),
                 float(df['petal width (cm)'].mean()))
-
+st.image('iris.png')
 #預測
 labels = ['Setosa','Versicolor','Virginica']
 if st.button("預測"):
     x = [[se1, se2, se3, se4]]
     y_pred = model.predict(x)
+
     st.success(f'預測的品種為:{labels[y_pred[0]]}')
